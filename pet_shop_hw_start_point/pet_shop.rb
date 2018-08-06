@@ -44,6 +44,7 @@ end
     pet = find_pet_by_name(pet_shop, name)
     index = pet_shop[:pets].index(pet)
     pet_shop[:pets].delete_at(index)
+    # pet_shop[:pets].delete(find_pet_by_name(pet_shop, name))
   end
 
   def add_pet_to_stock(pet_shop, new_pet)
@@ -77,6 +78,7 @@ end
     if pet == nil
       return
     end
+    # return nil unless pet 
     if customer_can_afford_pet(customer, pet) == true
       remove_customer_cash(customer, pet[:price])
       add_pet_to_customer(customer, pet)
